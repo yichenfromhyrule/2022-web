@@ -108,6 +108,7 @@ export default class Note extends Component {
       });
   }
 
+
   render() {
     const { currentNote } = this.state;
 
@@ -171,10 +172,18 @@ export default class Note extends Component {
 
             <button
               type="submit"
-              className="badge badge-success"
+              className="badge badge-success mr-2"
               onClick={this.updateNote}
             >
               Update
+            </button>
+
+            <button
+              type="submit"
+              className="badge badge-info"
+              onClick={this.infoNote}
+            >
+              Details
             </button>
             <p>{this.state.message}</p>
           </div>

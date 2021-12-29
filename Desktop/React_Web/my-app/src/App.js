@@ -5,6 +5,7 @@ import "./App.css";
 
 import AddNote from "./components/add-note.component";
 import NotesList from "./components/notes-list.component";
+import NotesInfo from "./components/note-info.component";
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
           <Switch>
             <Route exact path={["/", "/notes"]} component={NotesList} />
             <Route exact path="/add" component={AddNote} />
+            <Route exact path="/note/:noteId" component={NotesInfo} />
           </Switch>
         </div>
       </div>

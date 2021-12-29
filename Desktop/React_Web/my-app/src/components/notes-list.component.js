@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+import {
+  Link,
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 import NoteDataService from "../services/note.service";
 
 import Note from "./note.component";
@@ -80,6 +87,10 @@ export default class NotesList extends Component {
           <ul className="list-group">
             {notes &&
               notes.map((note, index) => (
+                <div>
+                <h5 key = {index}>
+                  <Link to={`/note/${index + 1}`}>{index}'s Page</Link>
+                </h5>
                 <li
                   className={
                     "list-group-item " +
@@ -90,6 +101,7 @@ export default class NotesList extends Component {
                 >
                   {note.title}
                 </li>
+                </div>
               ))}
           </ul>
 
