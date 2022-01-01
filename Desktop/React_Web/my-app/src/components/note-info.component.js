@@ -50,10 +50,12 @@ export default class NotesInfo extends Component {
   render() {
     //  var currentNote = {currentNote};
     const { notes } = this.state;
+    console.log(this.props);
     const currentIndex = this.props.match.params.noteId - 1;
     const currentNote = notes[currentIndex];
     console.log(currentIndex);
     console.log(typeof currentNote);
+    const currentKey = this.props.match.params.noteId;
     
     
     //const entries = Object.entries(currentNote);
@@ -64,6 +66,7 @@ export default class NotesInfo extends Component {
       <div>
         <h1>HIIIIII</h1>
         <h2>{currentIndex}</h2>
+        <h2>{currentKey}</h2>
         
        
         

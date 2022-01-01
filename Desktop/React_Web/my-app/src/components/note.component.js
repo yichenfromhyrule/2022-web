@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+import {
+  Link,
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 import NoteDataService from "../services/note.service";
 
 export default class Note extends Component {
@@ -39,6 +46,11 @@ export default class Note extends Component {
     });
   }
 
+  infoNote = e => {
+    this.setState({
+      message: "我是你爸爸", 
+    });
+  }
   onChangeTitle(e) {
     const title = e.target.value;
 
@@ -107,6 +119,8 @@ export default class Note extends Component {
         console.log(e);
       });
   }
+
+  
 
 
   render() {
@@ -185,7 +199,9 @@ export default class Note extends Component {
             >
               Details
             </button>
-            <p>{this.state.message}</p>
+            <Link to={`/note/${currentNote.key}`}>{currentNote.key}'s Page</Link>
+            <p>HIII</p>
+            <p>{this.state.message} {currentNote.key}</p>
           </div>
         ) : (
           <div>
