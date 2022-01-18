@@ -195,13 +195,14 @@ export default class Note extends Component {
             <button
               type="submit"
               className="badge badge-info"
-              onClick={this.infoNote}
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href=`/note/${currentNote.key}`;
+              }}
             >
               Details
             </button>
-            <Link to={`/note/${currentNote.key}`}>{currentNote.key}'s Page</Link>
-            <p>HIII</p>
-            <p>{this.state.message} {currentNote.key}</p>
+            
           </div>
         ) : (
           <div>

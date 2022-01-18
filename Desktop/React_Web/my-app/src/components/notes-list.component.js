@@ -88,9 +88,6 @@ export default class NotesList extends Component {
             {notes &&
               notes.map((note, index) => (
                 <div>
-                <h5 key = {index}>
-                  <Link to={`/note/${index + 1}`}>{index}'s Page</Link>
-                </h5>
                 <li
                   className={
                     "list-group-item " +
